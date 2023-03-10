@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "excel": "^1.0.1",
+    "init": "^0.1.2",
+    "mongodb": "^5.1.0"
+  }
+}
