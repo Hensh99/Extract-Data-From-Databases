@@ -1,12 +1,11 @@
+const Excel = require('exceljs');
 var MongoClient = require('mongodb').MongoClient;
 require('dotenv').config();
-// Replace the uri string with your MongoDB deployment's connection string.
+
 const client = new MongoClient(process.env.MONGO_URI);
 
-const Excel = require('exceljs');
-
 async function runTaqa() {
-  let docsTaqa = [] //<- Declare a variable to hold your docs 
+  let docsTaqa = [] // Declare a variable to hold TAQA Data
 
   try {
     const database = client.db("logReqproduction2023-02-19");
@@ -44,11 +43,8 @@ async function runTaqa() {
   }
 }
 
-
 async function runCash() {
-  let cashdocs = [] //<- Declare a variable to hold your docs  
-
-
+  let cashdocs = [] // Declare a variable to hold CashCall Data 
   
   try {
     const database = client.db("logReqproduction2023-02-19");
@@ -62,9 +58,6 @@ async function runCash() {
       "req.requestPath.request_type": "P"
     };
     const options = {
-      //   // sort returned documents in ascending order by title (A->Z)
-      //   sort: { name: 1 },
-      // Include only the `title` and `imdb` fields in each returned document
       projection: {
         "req.transaction_id": 1,
         "req.requestPath": 1
@@ -104,10 +97,7 @@ async function readExcel(sheetName) {
     console.error(error);
   }
 
-
-
 }
-
 
 function fillExcel(rows) {
   const fileName = 'TAQA_19.xlsx';
