@@ -2,7 +2,10 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "excel": "^1.0.1",
+    "fs": "^0.0.1-security",
     "init": "^0.1.2",
-    "mongodb": "^5.1.0"
+    "mongodb": "^5.1.0",
+    "mysql2-promise": "^0.1.4",
+    "oracledb": "^6.2.0"
   }
 }
